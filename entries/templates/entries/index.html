@@ -1,0 +1,24 @@
+ {% extends "entries/base.html" %}
+ 
+ {% block content %}
+
+    <!-- Looping for all the blogs -->
+    {% for entry in blog_entries %} 
+
+    <!-- Blog Post -->
+    <div class="card mb-4">
+        <img class="card-img-top" src="{{ entry.entry_image_url }}" alt="Card image cap">
+        <div class="card-body">
+          <h2 class="card-title">{{ entry.entry_title }}</h2>
+          <p class="card-text">{{ entry.entry_text }}</p>
+          <a href="#" class="btn btn-primary">Read More &rarr;</a>
+        </div>
+        <div class="card-footer text-muted">
+          Posted on {{ entry.entry_date }} by
+          <a href="#">{{ entry.entry_author }}</a>
+        </div>
+      </div>
+    
+      {% endfor %}
+
+  {% endblock %}
