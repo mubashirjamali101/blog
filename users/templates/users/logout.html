@@ -3,7 +3,9 @@
 {% block content %}
 
     <div class="col-md-8 mt-4">
-        <h4>Successfully logged out. <a href="{% url 'login' %}">Login Again</a></h4>
+        <h4><span class="text-success">Successfully logged out.</span> <a href="{% url 'login' %}">Login Again</a></h4>
+        <hr>
+        <a href="{% url 'register' %}" class="btn btn-success">Sign Up For New Account</a>
     </div>
 
  {% endblock %}

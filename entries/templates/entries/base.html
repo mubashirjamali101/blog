@@ -43,7 +43,7 @@
             <a class="nav-link text-warning" href="{% url 'about' %}">About</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link text-warning" title="Logged In As {{ user.first_name }} {{ user.last_name }}">{{ user.first_name}}</a>
+            <a class="nav-link text-warning" title="{{ user.username }}">{{ user.first_name}} {{ user.last_name }}</a>
           </li>
           <li class="nav-item">
             <a class="nav-link text-danger" href="{% url 'logout' %}">Logout</a>
