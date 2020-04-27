@@ -1,0 +1,19 @@
+{% extends "entries/base.html" %}
+ 
+{% block content %}
+
+   <div class="card mb-4">
+       <div class="card-header">
+            Sign In To Your Account
+       </div>
+       <div class="card-body">
+         <form method="POST" class="form-group">
+             {% csrf_token %}
+             {{form.as_p}}
+             <button type="submit" class="btn btn-primary">SIGN IN</button>
+         </form>
+         <a href="{% url 'register' %}" class="btn btn-success">Sign Up For New Account</a>
+       </div>
+     </div>
+
+ {% endblock %}

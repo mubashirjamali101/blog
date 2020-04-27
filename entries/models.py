@@ -2,6 +2,7 @@ from django.db import models
 
 from django.contrib.auth.models import User
 
+#Post model for DB
 class Entry(models.Model):
     entry_title = models.CharField(max_length=50)
     entry_text = models.TextField()
