@@ -1,5 +1,5 @@
 from django.shortcuts import render
-from django.views.generic import ListView
+from django.views.generic import ListView, DetailView, CreateView
 from .models import Entry
 
 class HomeView(ListView):
@@ -7,4 +7,12 @@ class HomeView(ListView):
     template_name = 'entries/index.html'
     context_object_name = "blog_entries"
 
-# Create your views here.
+
+class EntryView(DetailView):
+    model = Entry
+    template_name = 'entries/entry_detail.html'
+
+class CreateEntryView(CreateView):
+    model = Entry
+    template_name = 'entries/create_entry.html'
+    fields = ['title', 'text']
