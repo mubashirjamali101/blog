@@ -5,18 +5,18 @@
 
    <a class="btn btn-primary mb-4" href="{% url 'blog-home' %}">&larr; Back To Home</a>
    <!-- Blog Post -->
-   <div class="card mb-4">
+   <div class="mb-4">
+       <h2 class="card-title display-3">{{ object.entry_title }}</h2>
        <img class="card-img-top" src="{{ object.entry_image_url }}" alt="Card image cap">
        <div class="card-body">
-         <h2 class="card-title display-3">{{ object.entry_title }}</h2>
-         <p class="card-text" style="font-size: large;line-height: 180%;">{{ object.entry_text|linebreaks }}</p>
+         <h3 style="font-size: 25px !important;line-height: 180%;">{{ object.entry_text|linebreaks }}</h3>
          <!-- <a href="#" class="btn btn-primary">Read More &rarr;</a> -->
        </div>
        <div class="card-footer text-muted">
          Posted on {{ object.entry_date }} by
          <a href="#">{{ object.entry_author }}</a>
        </div>
+       <a class="btn btn-primary mt-4" href="{% url 'blog-home' %}">&larr; Back To Home</a>
      </div>
-     <a class="btn btn-primary mb-4" href="{% url 'blog-home' %}">&larr; Back To Home</a>
 
  {% endblock %}
