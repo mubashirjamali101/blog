@@ -1,0 +1,24 @@
+{% extends "entries/base.html" %}
+ 
+{% block content %}
+
+
+   <!-- Blog Post -->
+   <div class="mb-4">
+       <h2 class="card-title display-3">About Us</h2>
+       <hr>
+       <img class="card-img-top" src="https://image.freepik.com/free-vector/startup-business-people-group-working-everyday-job-coworking-office-space_27170-90.jpg" alt="Card image cap">
+       <div class="card-body">
+        <h5 style="font-size: 20px !important;line-height: 200%;">
+            Lorem ipsum dolor sit, amet consectetur adipisicing elit. Omnis quae sequi 
+            laborum possimus magnam perspiciatis eius, eveniet enim ab tempora assumenda 
+            optio mollitia ex rerum a dolorem cum accusantium. Praesentium?
+        </h5>
+       </div>
+       <div class="card-footer text-muted">
+         Thanks For Reading About Us
+       </div>
+       <a class="btn btn-primary mt-4" href="{% url 'blog-home' %}">&larr; Home</a>
+     </div>
+
+ {% endblock %}

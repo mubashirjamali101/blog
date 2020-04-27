@@ -7,14 +7,17 @@
    <!-- Blog Post -->
    <div class="mb-4">
        <h2 class="card-title display-3">{{ object.entry_title }}</h2>
+       <div class="p-2 text-muted">
+        <hr>
+        <p>
+            Posted on {{ object.entry_date }} by
+            <a href="#">{{ object.entry_author }}</a>
+        </p>
+       </div>
        <img class="card-img-top" src="{{ object.entry_image_url }}" alt="Card image cap">
        <div class="card-body">
-         <h3 style="font-size: 25px !important;line-height: 180%;">{{ object.entry_text|linebreaks }}</h3>
+         <h5 style="font-size: 20px !important;line-height: 200%;">{{ object.entry_text|linebreaks }}</h5>
          <!-- <a href="#" class="btn btn-primary">Read More &rarr;</a> -->
-       </div>
-       <div class="card-footer text-muted">
-         Posted on {{ object.entry_date }} by
-         <a href="#">{{ object.entry_author }}</a>
        </div>
        <a class="btn btn-primary mt-4" href="{% url 'blog-home' %}">&larr; Back To Home</a>
      </div>
