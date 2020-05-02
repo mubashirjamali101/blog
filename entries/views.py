@@ -3,7 +3,7 @@ from django.views.generic import ListView, DetailView, CreateView
 from django.contrib.auth.mixins import LoginRequiredMixin
 from .models import Entry
 
-class HomeView(LoginRequiredMixin, ListView):
+class HomeView(ListView): # remove LoginRequiredMixin so that user can see homepage without login
     model = Entry
     template_name = 'entries/index.html'
     context_object_name = "blog_entries"
@@ -11,7 +11,7 @@ class HomeView(LoginRequiredMixin, ListView):
     paginate_by = 3 #three items per page
 
 ###readmore or full blog view
-class EntryView(LoginRequiredMixin, DetailView):
+class EntryView(DetailView): # remove LoginRequiredMixin so that user can see full reading blog page without login
     model = Entry
     template_name = 'entries/entry_detail.html'
 
@@ -26,7 +26,6 @@ class CreateEntryView(LoginRequiredMixin, CreateView):
         return super().form_valid(form)
 
 
-class AboutView(LoginRequiredMixin, CreateView):
+class AboutView(ListView):
     model = Entry
     template_name = 'entries/about.html'
-    fields = []
